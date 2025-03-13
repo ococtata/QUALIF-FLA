@@ -1,13 +1,12 @@
 package main;
 
-import manager.GameManager;
+import manager.game.GameManager;
 
 public class Main {
 	GameManager gameManager = GameManager.getInstance();
 	
 	public Main() {
 		gameManager.startGame();
-		System.out.println("Test");
 	}
 	
 	public static void main(String[] args) {

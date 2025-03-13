@@ -1,10 +1,8 @@
-package util;
+package controller;
 
-import java.util.Scanner;
+import utility.ScannerUtil;
 
-public class InputHandler {
-	private static final Scanner scan = new Scanner(System.in);
-	
+public class InputHandler implements ScannerUtil{	
 	public static void pressEnterToContinue() {
 		System.out.println(" Press Enter to Continue...");
 		scan.nextLine();
@@ -29,6 +27,21 @@ public class InputHandler {
 				else System.out.printf(" Input must be between %d - %d!\n", min, max);
 			} catch (Exception e){
 				System.out.println(" Input must be Integer!");
+			}
+		}
+	}
+	
+	public static String getValidStringInput(String prompt) {
+		while(true) {
+			System.out.print(prompt);
+			
+			String input = scan.nextLine();
+			
+			if(input == null) {
+				System.out.println(" Input cannot be empty!");
+			}
+			else {
+				return input;
 			}
 		}
 	}
